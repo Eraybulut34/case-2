@@ -6,14 +6,6 @@
     </div>
 
     <input
-      v-if="type == checkbox"
-      @change="onChange"
-      :type="type"
-      :placeholder="placeholder"
-      v-model="text"
-    />
-
-    <input
       @change="onChange"
       :type="type"
       :placeholder="placeholder"
@@ -35,6 +27,9 @@ export default {
 
   computed: {
     text: {
+          get() {
+                return this.value;
+            },
       set(val) {
         this.$emit("input", val);
       },

@@ -13,3 +13,14 @@ editPosts() {
   this.fields.forEach((element) => {
     element.default_value = this.;
     });
+
+    editPosts(data) {
+      var yyy= this.data.default_value;
+      for(let i in yyy){
+        console.log(yyy[i])
+      };
+      yyy.forEach( async (element) => {
+        yyy[element] = Object.values(data);
+      });
+    },
+  },
