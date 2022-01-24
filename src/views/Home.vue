@@ -10,7 +10,13 @@
         :id="d.id"
       />
     </div>
-    <button @click="postFields()">sadasdas</button>
+    <button @click="postFields()">Gönder</button>
+    <li v-for="post in posts" :key="post.id">
+      {{ post.id }}
+      <button class="btn btn-primary" @click="editPosts(post)">
+        Düzenle
+      </button>
+    </li>
   </div>
 </template>
 
@@ -24,27 +30,42 @@ export default {
     return {
       data: null,
       posts: null,
-      xxx: "test",
+      post: null,
     };
   },
   beforeMount() {
     this.getFields();
+    this.getPosts();
   },
   methods: {
     getFields() {
       axios
         .get("http://localhost:3000/fields")
         .then((response) => (this.data = response.data));
-      Array.from();
+    },
+    getPosts() {
+      axios
+        .get("http://localhost:3000/posts")
+        .then((response) => (this.posts = response.data));
     },
     postFields() {
       var postData = {};
       this.data.forEach((element) => {
         postData["cf_" + element.id] = element.default_value;
       });
-      axios.post("http://localhost:3000/posts", postData);
-    },
+      axios.post("http://localhost:3000/posts", postData).then(() => {
+        postData = null;
+      });
+    },  
+    editPosts(data) {
+    this.fields.forEach((element) => {
+    element.default_value = data;
+    });s
   },
+  },
+  
+
+  
   components: {
     CustomField,
   },
