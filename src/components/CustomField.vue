@@ -10,6 +10,7 @@
       :type="type"
       :placeholder="placeholder"
       v-model="text"
+
     />
   </div>
 </template>
@@ -34,6 +35,14 @@ export default {
         this.$emit("input", val);
       },
     },
+       validator: {
+          get() {
+                return this.validate;
+            },
+      set(e) {
+        this.$emit("validator", e);
+      },
+    },
   },
   props: {
     textchanged: {
@@ -52,6 +61,13 @@ export default {
 
 
 <style scoped lang="scss">
+input{
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+}
+
 .tooltip {
   position: relative;
   display: inline-block;

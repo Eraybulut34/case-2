@@ -1,17 +1,35 @@
 <template>
-  <div><div class="form-group">
-    <div v-for="d in data" :key="d.id">
-      <CustomField
-        v-model="d.default_value"
-        :type="d.input_type"
-        :name="d.name"
-        :placeholder="d.place_holder"
-        :description="d.description"
-        :id="d.id"
-      />
+  <div>
+    <div class="form-group">
+      <div v-for="d in data" :key="d.id">
+        <CustomField
+          v-if="d.input_type == 'checkbox'"
+          :type="d.input_type"
+          :name="d.name"
+          :placeholder="d.place_holder"
+          :description="d.description"
+          :id="d.id"
+          :validate="d.input_validator"
+          @input="setName($event.target.value)"
+        />
+
+        <CustomField
+          v-else
+          v-model="d.default_value"
+          :type="d.input_type"
+          :name="d.name"
+          :placeholder="d.place_holder"
+          :description="d.description"
+          :id="d.id"
+          :validate="d.input_validator"
+          :class="d.css_style"
+          @input="setName($event.target.value)"
+        />
+      </div>
+      <p v-if="error" class="error">{{error}}</p>
+      <button @click="postFields()">Gönder</button>
+      <button @click="updatePost(id)">Düzenlemeyi kaydet</button>
     </div>
-    <button @click="postFields()">Gönder</button>
-    <button @click="updatePost(id)">Düzenlemeyi kaydet</button></div>
     <li v-for="post in posts" :key="post.id">
       {{ post.id }}
       <button class="btn btn-primary" @click="editPosts(post)">Düzenle</button>
@@ -31,6 +49,7 @@ export default {
       posts: null,
       post: "123123",
       updateId: null,
+      error: "",
     };
   },
   beforeMount() {
@@ -38,6 +57,7 @@ export default {
     this.getPosts();
     this.default();
   },
+  computed: {},
   methods: {
     getFields() {
       axios
@@ -52,9 +72,21 @@ export default {
     postFields() {
       var postData = {};
       this.data.forEach((element) => {
-        postData["cf_" + element.id] = element.default_value;
+        if (element.default_value !== "") {
+          postData["cf_" + element.id] = element.default_value;
+          axios.post("http://localhost:3000/posts", postData);
+          this.default();
+        } else {
+          this.error = "Lütfen tüm alanları doldurunuz";
+        }
       });
-      axios.post("http://localhost:3000/posts", postData);
+    },
+        updatePost() {
+      var putData = {};
+      this.data.forEach((element) => {
+        putData["cf_" + element.id] = element.default_value;
+      });
+      axios.put("http://localhost:3000/posts/" + this.updateId, putData);
       this.default();
     },
     default() {
@@ -69,14 +101,7 @@ export default {
         this.updateId = xyz[xyz.length - 1];
       });
     },
-    updatePost() {
-      var putData = {};
-      this.data.forEach((element) => {
-        putData["cf_" + element.id] = element.default_value;
-      });
-      axios.put("http://localhost:3000/posts/" + this.updateId, putData);
-      this.default();
-    },
+
   },
   created: {},
   components: {
@@ -90,14 +115,25 @@ export default {
 * {
   margin: 0%;
 }
+.error {
+  color: red;
+}
+button {
+  margin: 0%;
+  background-color: steelblue;
+  border-block-color: white;
+  border-radius: 6px;
+  color: white;
+  padding: 5px;
+}
 .form-action {
   display: block;
   justify-content: space-around;
 }
 
-.form-group{
+.form-group {
   display: grid;
-  
+
   justify-content: space-around;
 }
 </style>

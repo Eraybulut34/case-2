@@ -23,7 +23,7 @@
         "id": "6099a2aea0d0960004268fd9"
       },
       "input_type": "textbox",
-      "input_validator": "none",
+      "input_validator": "title",
       "is_list_item": false,
       "is_required": true,
       "name": "Title",
@@ -70,7 +70,7 @@
         "id": "6099a48aa0d09600042696d5"
       },
       "input_type": "smart_ddl",
-      "input_validator": "",
+      "input_validator": "title",
       "is_list_item": false,
       "is_required": true,
       "name": "Category",
@@ -243,7 +243,7 @@
         "id": "6099a538a0d0960004269e99"
       },
       "input_type": "text",
-      "input_validator": "",
+      "input_validator": "text",
       "is_list_item": false,
       "is_required": false,
       "name": "Details",
@@ -270,19 +270,19 @@
   ],
   "posts": [
     {
-      "cf_6099a2aea0d0960004268fd8": "Thissss",
-      "cf_6099a48aa0d09600042696d1": "category_1asdasd",
-      "cf_6099a511a0d0960004269ab6": true,
-      "cf_6099a52ca0d0960004269ca7": "2021-06-18T00:00",
-      "cf_6099a538a0d0960004269e98": "This is my first blog textadfa",
+      "cf_6099a2aea0d0960004268fd8": "Thi2222",
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "cf_6099a52ca0d0960004269ca7": null,
+      "cf_6099a538a0d0960004269e98": null,
       "id": 1
     },
     {
       "cf_6099a2aea0d0960004268fd8": "My New Titleasda",
-      "cf_6099a48aa0d09600042696d1": "default_valueasdasd",
-      "cf_6099a511a0d0960004269ab6": true,
-      "cf_6099a52ca0d0960004269ca7": "default_valueasd",
-      "cf_6099a538a0d0960004269e98": "adsasd",
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "cf_6099a52ca0d0960004269ca7": null,
+      "cf_6099a538a0d0960004269e98": null,
       "id": 4
     },
     {
@@ -302,11 +302,11 @@
       "id": 6
     },
     {
-      "cf_6099a2aea0d0960004268fd8": "aadsd",
-      "cf_6099a48aa0d09600042696d1": "asdsad",
-      "cf_6099a511a0d0960004269ab6": true,
-      "cf_6099a52ca0d0960004269ca7": "asdasd",
-      "cf_6099a538a0d0960004269e98": "asdasd",
+      "cf_6099a2aea0d0960004268fd8": null,
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "cf_6099a52ca0d0960004269ca7": null,
+      "cf_6099a538a0d0960004269e98": null,
       "id": 7
     },
     {
@@ -510,20 +510,213 @@
       "id": 32
     },
     {
-      "cf_6099a2aea0d0960004268fd8": "asdasd",
-      "cf_6099a48aa0d09600042696d1": "asdasda",
+      "cf_6099a2aea0d0960004268fd8": null,
+      "cf_6099a48aa0d09600042696d1": null,
       "cf_6099a511a0d0960004269ab6": null,
-      "cf_6099a52ca0d0960004269ca7": "sdasd",
-      "cf_6099a538a0d0960004269e98": "asdasdads",
-      "id": 33
+      "cf_6099a52ca0d0960004269ca7": null,
+      "cf_6099a538a0d0960004269e98": null,
+      "id": 67
     },
     {
-      "cf_6099a2aea0d0960004268fd8": "Thissss",
-      "cf_6099a48aa0d09600042696d1": "category_1asdasd",
-      "cf_6099a511a0d0960004269ab6": true,
-      "cf_6099a52ca0d0960004269ca7": "2021-06-18T00:00",
-      "cf_6099a538a0d0960004269e98": "This is my first blog text",
-      "id": 34
+      "cf_6099a2aea0d0960004268fd8": "My New Title",
+      "cf_6099a48aa0d09600042696d1": "default_value",
+      "cf_6099a52ca0d0960004269ca7": "default_value",
+      "id": 68
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": "My New Title",
+      "cf_6099a48aa0d09600042696d1": "default_value",
+      "cf_6099a52ca0d0960004269ca7": "default_value",
+      "id": 69
+    },
+    {
+      "cf_6099a511a0d0960004269ab6": "",
+      "id": 70
+    },
+    {
+      "cf_6099a511a0d0960004269ab6": "",
+      "id": 71
+    },
+    {
+      "cf_6099a511a0d0960004269ab6": "",
+      "id": 72
+    },
+    {
+      "cf_6099a511a0d0960004269ab6": "",
+      "id": 73
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": "",
+      "id": 74
+    },
+    {
+      "cf_6099a511a0d0960004269ab6": "",
+      "id": 75
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": "My New Title",
+      "id": 76
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": "My New Title",
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "id": 77
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": "My New Title",
+      "cf_6099a48aa0d09600042696d1": null,
+      "id": 78
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": "My New Title",
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "cf_6099a52ca0d0960004269ca7": null,
+      "id": 79
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": "My New Title",
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "cf_6099a52ca0d0960004269ca7": null,
+      "cf_6099a538a0d0960004269e98": null,
+      "id": 80
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "id": 81
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "cf_6099a48aa0d09600042696d1": null,
+      "id": 82
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "id": 83
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "cf_6099a52ca0d0960004269ca7": null,
+      "id": 84
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "cf_6099a52ca0d0960004269ca7": null,
+      "cf_6099a538a0d0960004269e98": null,
+      "id": 85
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "id": 86
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "cf_6099a48aa0d09600042696d1": null,
+      "id": 87
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "cf_6099a52ca0d0960004269ca7": null,
+      "id": 88
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "cf_6099a52ca0d0960004269ca7": null,
+      "cf_6099a538a0d0960004269e98": null,
+      "id": 89
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "id": 90
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "id": 91
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "cf_6099a48aa0d09600042696d1": null,
+      "id": 92
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "id": 93
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "cf_6099a52ca0d0960004269ca7": null,
+      "id": 94
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "cf_6099a52ca0d0960004269ca7": null,
+      "cf_6099a538a0d0960004269e98": null,
+      "id": 95
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "id": 96
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "cf_6099a48aa0d09600042696d1": null,
+      "id": 97
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": null,
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "id": 98
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": "My New Title",
+      "id": 99
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": "My New Title",
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "id": 100
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": "My New Title",
+      "cf_6099a48aa0d09600042696d1": null,
+      "id": 101
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": "My New Title",
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "cf_6099a52ca0d0960004269ca7": null,
+      "id": 102
+    },
+    {
+      "cf_6099a2aea0d0960004268fd8": "My New Title",
+      "cf_6099a48aa0d09600042696d1": null,
+      "cf_6099a511a0d0960004269ab6": null,
+      "cf_6099a52ca0d0960004269ca7": null,
+      "cf_6099a538a0d0960004269e98": null,
+      "id": 103
     }
   ]
 }
