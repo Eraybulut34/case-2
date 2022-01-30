@@ -1,19 +1,19 @@
 <template>
-  <div>
+  <div class="home">
     <div class="form-group">
       <div v-for="d in data" :key="d.id">
         <CustomField
+        class="form-item"
           v-if="d.input_type == 'checkbox'"
           :type="d.input_type"
           :name="d.name"
-          :placeholder="d.place_holder"
           :description="d.description"
           :id="d.id"
           :validate="d.input_validator"
-          @input="setName($event.target.value)"
         />
 
         <CustomField
+        class="form-item"
           v-else
           v-model="d.default_value"
           :type="d.input_type"
@@ -26,9 +26,11 @@
           @input="setName($event.target.value)"
         />
       </div>
-      <p v-if="error" class="error">{{error}}</p>
-      <button @click="postFields()">Gönder</button>
+      <p v-if="error" class="error">{{ error }}</p>
+    <div class="buttons">
+        <button @click="postFields()">Gönder</button>
       <button @click="updatePost(id)">Düzenlemeyi kaydet</button>
+    </div>
     </div>
     <li v-for="post in posts" :key="post.id">
       {{ post.id }}
@@ -81,7 +83,7 @@ export default {
         }
       });
     },
-        updatePost() {
+    updatePost() {
       var putData = {};
       this.data.forEach((element) => {
         putData["cf_" + element.id] = element.default_value;
@@ -101,7 +103,6 @@ export default {
         this.updateId = xyz[xyz.length - 1];
       });
     },
-
   },
   created: {},
   components: {
@@ -111,29 +112,50 @@ export default {
 </script>
 
 
-<style scoped>
+<style scoped lang="scss">
 * {
   margin: 0%;
+}
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .error {
   color: red;
 }
 button {
-  margin: 0%;
+  margin: 5px;
   background-color: steelblue;
-  border-block-color: white;
+  border: none;
   border-radius: 6px;
   color: white;
   padding: 5px;
+  cursor: pointer;
+  max-height: 30px;
 }
-.form-action {
-  display: block;
-  justify-content: space-around;
+.buttons{
+  margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .form-group {
-  display: grid;
-
-  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(242, 247, 248);
+width: 800px;
+height: 500px;
+align-items: center;
+justify-content: center;
+.form-item{
+  width: 280px;
+  max-width: 280px;
+  margin-bottom: 10px;
+  padding-left: 10px;
 }
+}
+
 </style>

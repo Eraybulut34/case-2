@@ -65,7 +65,7 @@ input{
   border: 1px solid #ccc;
   padding: 5px;
   border-radius: 5px;
-  width: 100%;
+  width: 250px;
 }
 
 .tooltip {
